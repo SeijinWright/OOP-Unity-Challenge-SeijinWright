@@ -349,7 +349,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1356748156
 Canvas:
   m_ObjectHideFlags: 0
@@ -359,7 +359,7 @@ Canvas:
   m_GameObject: {fileID: 1356748153}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -380,7 +380,7 @@ RectTransform:
   m_GameObject: {fileID: 1356748153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1736115177}
@@ -390,8 +390,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1474124308
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,7 +507,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c176d0f21ea57c44ca77a0dae0e48496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 250
+--- !u!50 &1722925989
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722925984}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1736115176
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,16 +555,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736115176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1356748157}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -240.68}
+  m_AnchoredPosition: {x: 0, y: -2.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1736115178
@@ -654,10 +675,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left Guy
       objectReference: {fileID: 0}
-    - target: {fileID: 6627122596257819805, guid: 1b996eb120ded4f4f8af36ec489bfdbc, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7918281597933720143, guid: 1b996eb120ded4f4f8af36ec489bfdbc, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -763,7 +780,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6524848260692065497, guid: 5e30a766034365845b8d3eda063ee492, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5e30a766034365845b8d3eda063ee492, type: 3}
 --- !u!1001 &5311621963389702596
 PrefabInstance:
@@ -782,11 +800,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5311621964724717995, guid: 98dc7881e8f06a94d8c09f9a15b88195, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.85998535
+      value: -1.58
       objectReference: {fileID: 0}
     - target: {fileID: 5311621964724717995, guid: 98dc7881e8f06a94d8c09f9a15b88195, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1900024
+      value: -0.51
       objectReference: {fileID: 0}
     - target: {fileID: 5311621964724717995, guid: 98dc7881e8f06a94d8c09f9a15b88195, type: 3}
       propertyPath: m_LocalPosition.z
@@ -836,14 +854,6 @@ PrefabInstance:
     - target: {fileID: 1844118718775544936, guid: e71ac811c44544d498225adaca3d873b, type: 3}
       propertyPath: m_Name
       value: Down Guy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2249050245835419399, guid: e71ac811c44544d498225adaca3d873b, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2249050245835419399, guid: e71ac811c44544d498225adaca3d873b, type: 3}
-      propertyPath: m_Constraints
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3426262945690071738, guid: e71ac811c44544d498225adaca3d873b, type: 3}
       propertyPath: m_RootOrder
@@ -948,7 +958,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8731874101000768066, guid: 89d0dc9eadf118743b26681cd80cb53b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6404867901034935903, guid: 89d0dc9eadf118743b26681cd80cb53b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 89d0dc9eadf118743b26681cd80cb53b, type: 3}

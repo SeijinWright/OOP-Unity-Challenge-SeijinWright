@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DownGuy : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
     public float speed;
 
     // Start is called before the first frame update
@@ -14,7 +14,7 @@ public class DownGuy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void LateUpdate()
     {
         rb.position = new Vector2(rb.position.x, rb.position.y - speed * Time.deltaTime);
     }
