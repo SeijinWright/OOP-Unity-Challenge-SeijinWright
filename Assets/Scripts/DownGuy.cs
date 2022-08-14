@@ -17,13 +17,7 @@ public class DownGuy : MonoBehaviour
     // Update is called once per frame
     protected virtual void LateUpdate()
     {
-        rb.position = new Vector2(rb.position.x, rb.position.y - os.enemySpeed * Time.deltaTime);
-        Vector2 tmpPos = Camera.main.WorldToScreenPoint(transform.position);
-
-        if (tmpPos.y <= -os.enemyExitDespawnDistance)
-        {
-            Destroy(gameObject);
-        }
+        Move();
     }
 
     private void OnCollisionEnter2D (Collision2D collision)
@@ -31,6 +25,17 @@ public class DownGuy : MonoBehaviour
         if (collision.gameObject.tag == "Bad Guy")
         {
             collision.rigidbody.AddForce((collision.transform.position - transform.position) * os.enemyBumpForce, ForceMode2D.Impulse);
+        }
+    }
+
+    protected virtual void Move()
+    {
+        rb.position = new Vector2(rb.position.x, rb.position.y - os.enemySpeed * Time.deltaTime);
+        Vector2 tmpPos = Camera.main.WorldToScreenPoint(transform.position);
+
+        if (tmpPos.y <= -os.enemyExitDespawnDistance)
+        {
+            Destroy(gameObject);
         }
     }
 }

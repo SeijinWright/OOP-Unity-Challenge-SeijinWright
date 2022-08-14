@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UpGuy : DownGuy
 {
-    protected override void LateUpdate()
+    protected override void Move()
     {
         rb.position = new Vector2(rb.position.x, rb.position.y + os.enemySpeed * Time.deltaTime);
         Vector2 tmpPos = Camera.main.WorldToScreenPoint(transform.position);
