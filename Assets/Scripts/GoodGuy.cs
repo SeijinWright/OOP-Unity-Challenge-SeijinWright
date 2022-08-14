@@ -18,6 +18,7 @@ public class GoodGuy : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        Vector2 tmpPos = Camera.main.WorldToScreenPoint(transform.position);
     }
 
     public void Move()
