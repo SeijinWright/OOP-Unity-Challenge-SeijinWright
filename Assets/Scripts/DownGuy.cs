@@ -6,12 +6,16 @@ public class DownGuy : MonoBehaviour
 {
     protected Rigidbody2D rb;
     protected Overseer os;
+    protected AudioSource ad;
+    protected Animation anim;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         os = Overseer.overseer;
+        ad = GetComponent<AudioSource>();
+        anim = GetComponent<Animation>();
     }
 
     // Update is called once per frame
@@ -25,6 +29,8 @@ public class DownGuy : MonoBehaviour
         if (collision.gameObject.tag == "Bad Guy")
         {
             collision.rigidbody.AddForce((collision.transform.position - transform.position) * os.enemyBumpForce, ForceMode2D.Impulse);
+            ad.Play();
+            anim.Play("Enemy Bump");
         }
     }
 

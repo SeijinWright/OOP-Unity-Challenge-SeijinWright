@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Overseer : MonoBehaviour
 {
     public static Overseer overseer;
-    [HideInInspector] public int enemyExitDespawnDistance { get; set; }
+    [HideInInspector] public int enemyExitDespawnDistance = 50;
     public float enemySpeed;
     public float enemyBumpForce;
     public float enemySpawnRate;

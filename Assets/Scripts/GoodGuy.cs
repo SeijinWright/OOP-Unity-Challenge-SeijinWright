@@ -12,12 +12,14 @@ public class GoodGuy : MonoBehaviour
 
     private Overseer os;
     private Animation anim;
+    private AudioSource ad;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         os = Overseer.overseer;
         anim = GetComponent<Animation>();
+        ad = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -41,6 +43,7 @@ public class GoodGuy : MonoBehaviour
         {
             os.AddHit();
             anim.Play("Player Hurt");
+            ad.Play();
         }
     }
 }

@@ -10,10 +10,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject rightGuy;
 
     public int spawnDistanceFromFrame;
-    private int screenWidth;
-    private int screenHeight;
     public int spawnBorder;
-    private Vector2 tmpPos;
 
     private Overseer os;
 
@@ -21,12 +18,6 @@ public class SpawnManager : MonoBehaviour
     {
         os = Overseer.overseer;
         StartCoroutine(SpawnEnemies());
-    }
-
-    private void Update()
-    {
-        screenWidth = Camera.main.pixelWidth;
-        screenHeight = Camera.main.pixelHeight;
     }
 
     IEnumerator SpawnEnemies()
