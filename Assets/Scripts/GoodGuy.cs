@@ -19,6 +19,7 @@ public class GoodGuy : MonoBehaviour
     {
         Move();
         Vector2 tmpPos = Camera.main.WorldToScreenPoint(transform.position);
+        print(tmpPos.x + " " + tmpPos.y);
     }
 
     public void Move()

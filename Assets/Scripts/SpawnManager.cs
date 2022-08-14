@@ -21,7 +21,6 @@ public class SpawnManager : MonoBehaviour
     {
         os = Overseer.overseer;
         StartCoroutine(SpawnEnemies());
-        tmpPos = (Vector2.zero);
     }
 
     private void Update()
@@ -36,21 +35,25 @@ public class SpawnManager : MonoBehaviour
         {
             yield return new WaitForSeconds(os.enemySpawnRate);
             int enemyToSpawn = Random.Range(1, 5);
-            print(enemyToSpawn);
+            Vector2 tmpPos;
             if (enemyToSpawn == 1)
             {
+                tmpPos = Camera.main.ScreenToWorldPoint(new Vector2(Random.Range(spawnBorder, Screen.width - spawnBorder), Screen.height + spawnDistanceFromFrame));
                 Instantiate(downGuy, tmpPos, transform.rotation);
             }
             if (enemyToSpawn == 2)
             {
+                tmpPos = Camera.main.ScreenToWorldPoint(new Vector2(Random.Range(spawnBorder, Screen.width - spawnBorder), -spawnDistanceFromFrame));
                 Instantiate(upGuy, tmpPos, transform.rotation);
             }
             if (enemyToSpawn == 3)
             {
+                tmpPos = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width + spawnDistanceFromFrame, Random.Range(spawnBorder, Screen.height - spawnBorder)));
                 Instantiate(leftGuy, tmpPos, transform.rotation);
             }
             if (enemyToSpawn == 4)
             {
+                tmpPos = Camera.main.ScreenToWorldPoint(new Vector2(-spawnDistanceFromFrame, Random.Range(spawnBorder, Screen.height - spawnBorder)));
                 Instantiate(rightGuy, tmpPos, transform.rotation);
             }
         }

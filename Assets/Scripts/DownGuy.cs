@@ -19,6 +19,7 @@ public class DownGuy : MonoBehaviour
     {
         rb.position = new Vector2(rb.position.x, rb.position.y - os.enemySpeed * Time.deltaTime);
         Vector2 tmpPos = Camera.main.WorldToScreenPoint(transform.position);
+
         if (tmpPos.y <= -os.enemyExitDespawnDistance)
         {
             Destroy(gameObject);

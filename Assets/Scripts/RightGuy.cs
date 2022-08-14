@@ -10,7 +10,7 @@ public class RightGuy : DownGuy
         Vector2 tmpPos = Camera.main.WorldToScreenPoint(transform.position);
         if (tmpPos.x >= Camera.main.pixelWidth + os.enemyExitDespawnDistance)
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }
